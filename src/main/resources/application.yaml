@@ -1,3 +1,21 @@
 spring:
   application:
     name: s3-backup
+  batch:
+    job:
+      enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wallet_db
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+backup:
+  cron: ${BACKUP_CRON:minute} # minute - daily - weekly - monthly - annual
