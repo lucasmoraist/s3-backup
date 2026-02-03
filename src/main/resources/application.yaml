@@ -17,5 +17,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+aws:
+  access-key: ${AWS_ACCESS_KEY:your-access-key}
+  secret-key: ${AWS_SECRET_KEY:your-secret-key}
+  region: ${AWS_REGION:sa-east-1}
+  s3:
+    bucket-name: ${S3_BUCKET_NAME:your-bucket-name}
+
 backup:
   cron: ${BACKUP_CRON:minute} # minute - daily - weekly - monthly - annual
